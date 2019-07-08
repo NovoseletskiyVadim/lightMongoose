@@ -19,7 +19,8 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-uglifyjs": "^0.6.2",
-    "imagemin-pngquant": "^7.0.0"
+    "imagemin-pngquant": "^7.0.0",
+    "run-sequence": "^2.2.1"
   },
   "repository": {
     "type": "git",

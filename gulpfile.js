@@ -10,17 +10,22 @@ var gulp = require('gulp'),
 sass=require('gulp-sass'),
 browserSync= require('browser-sync'),
 concat      = require('gulp-concat'), // Подключаем gulp-concat (для конкатенации файлов)
-uglify      = require('gulp-uglifyjs'); // Подключаем gulp-uglify; 
+uglify      = require('gulp-uglifyjs'), // Подключаем gulp-uglify; 
 
 cssnano     = require('gulp-cssnano'), // Подключаем пакет для минификации CSS
-rename      = require('gulp-rename'); // Подключаем библиотеку дл
-del         = require('del'); // Подключаем библиотеку для удал
+rename      = require('gulp-rename'), // Подключаем библиотеку дл
+del         = require('del'), // Подключаем библиотеку для удал
 
 
 imagemin    = require('gulp-imagemin'), // Подключаем библиотеку для работы с изображениями
-pngquant    = require('imagemin-pngquant');     // Подключаем библиотеку для работы с png
+pngquant    = require('imagemin-pngquant'),    // Подключаем библиотеку для работы с png
 
-cache       = require('gulp-cache'); // Подключаем библиотеку кеширования
+cache       = require('gulp-cache'), // Подключаем библиотеку кеширования
+
+runSeq = require('run-sequence');
+
+
+
 
 
 
@@ -134,6 +139,15 @@ gulp.task('build',  function() {
 
 });
 
+gulp.task('heroku:production', function(){
+    runSeq('clean', 'build')
+  });
+
+gulp.task('deploy', function(){
+    return git.push('heroku', 'master', function(err){
+        if (err){console.log(err);throw err;}
+    });
+}) ; 
 
 gulp.task('default', gulp.parallel('watch','browser-sync','sass','css-libs','scripts'));
 
