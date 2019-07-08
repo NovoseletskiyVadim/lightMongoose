@@ -11,6 +11,7 @@
     "bower": "^1.8.4",
     "browser-sync": "^2.26.3",
     "del": "^3.0.0",
+    "git": "^0.1.5",
     "gulp": "^4.0.0",
     "gulp-cache": "^1.1.0",
     "gulp-concat": "^2.6.1",

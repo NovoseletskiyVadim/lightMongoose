@@ -22,6 +22,8 @@ pngquant    = require('imagemin-pngquant'),    // Подключаем библ�
 
 cache       = require('gulp-cache'), // Подключаем библиотеку кеширования
 
+git =require('git'),
+
 runSeq = require('run-sequence');
 
 
