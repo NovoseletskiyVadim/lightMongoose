@@ -52,7 +52,7 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
 
 gulp.task('html',function(){
     return gulp.src('app/**/*.html')
-    .pipe(browserSync.reload({stream:true}))
+    .pipe(browserSync.reload({stream:false}))
 
 });
 
