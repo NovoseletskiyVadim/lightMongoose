@@ -5,7 +5,8 @@
   "main": "gulpfile.js",
   "scripts": { 
     "start": "node app", 
-    "postinstall": "gulp default" 
+    "postinstall": "gulp default" ,
+    "heroku-postbuild": "gulp"
   },
   "devDependencies": {
     "bower": "^1.8.4",
