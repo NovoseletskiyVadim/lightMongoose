@@ -40,7 +40,14 @@ gulp.task('sass', function(){
     .pipe(browserSync.reload({stream: true})) 
 });
 
-
+gulp.task('browser-sync', function() { // Создаем таск browser-sync
+    browserSync({ // Выполняем browserSync
+        server: { // Определяем параметры сервера
+            baseDir: 'app' // Директория для сервера - app
+        },
+        notify: false // Отключаем уведомления
+    });
+});
 
 
 gulp.task('html',function(){
@@ -134,7 +141,7 @@ gulp.task('build',  function() {
 
 });
 
-gulp.task('heroku-production', function(){
+gulp.task('heroku-postbuild', function(){
     runSeq('clean', 'build')
   });
 
@@ -144,7 +151,7 @@ gulp.task('deploy', function(){
     });
 }) ; 
 
-gulp.task('default', gulp.parallel('watch','sass','css-libs','scripts'));
+gulp.task('default', gulp.parallel('watch','browser-sync','sass','css-libs','scripts'));
 
 
 
