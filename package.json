@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "This is a site for a company that deals with construction expertise",
   "main": "gulpfile.js",
-  "scripts": {
-    "build": "gulp",
-    "start": "node app.js"
+  "scripts": { 
+    "start": "node app", 
+    "postinstall": "gulp default" 
   },
   "devDependencies": {
     "bower": "^1.8.4",
