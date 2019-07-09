@@ -134,7 +134,7 @@ gulp.task('build',  function() {
 
 });
 
-gulp.task('heroku:production', function(){
+gulp.task('heroku-production', function(){
     runSeq('clean', 'build')
   });
 
